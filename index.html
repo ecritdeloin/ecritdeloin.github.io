@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>écrit de loin</title>
+<style>
+  :root{
+    --paper:#fbfaf8; --ink:#1a1a1a; --steel:#535a5e;
+    --cayenne:#941914; --rule:#dcd7d1;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:17px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{max-width:34rem; margin:0 auto; padding:3.5rem 1.5rem 4rem}
+
+  .rub{
+    font-family:var(--sans); font-size:.66rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--cayenne);
+    margin:0 0 .5rem;
+  }
+  h1{
+    font-family:var(--serif); font-weight:400; font-size:2.4rem; line-height:1.1;
+    margin:0 0 .35rem; letter-spacing:-.01em;
+  }
+  .sub{
+    font-style:italic; color:var(--steel); margin:0 0 1.6rem; font-size:1.02rem;
+  }
+  hr{border:0; border-top:1px solid var(--rule); margin:1.8rem 0}
+  .keyline{border:0; border-top:2px solid var(--cayenne); width:2.6rem; margin:1.4rem 0}
+
+  p{margin:0 0 1rem}
+  .lede{font-size:1.08rem}
+
+  h2{
+    font-family:var(--sans); font-size:.66rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--steel);
+    margin:2.4rem 0 .9rem;
+  }
+
+  ul.ed{list-style:none; margin:0; padding:0}
+  ul.ed li{
+    display:flex; gap:.9rem; align-items:baseline;
+    padding:.55rem 0; border-bottom:1px solid var(--rule);
+  }
+  ul.ed li:last-child{border-bottom:0}
+  .lang{
+    font-family:var(--sans); font-size:.68rem; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--steel); flex:0 0 2.6rem;
+  }
+  .ed-t{flex:1 1 auto}
+  .ed-t a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
+  .ed-t a:hover{border-bottom-color:var(--cayenne); color:var(--cayenne)}
+  .fmt{font-family:var(--sans); font-size:.72rem; color:var(--steel); white-space:nowrap}
+
+  .mail{
+    font-family:var(--sans); font-size:1rem; letter-spacing:.01em;
+    color:var(--ink); text-decoration:none; border-bottom:2px solid var(--cayenne);
+  }
+  .mail:hover{color:var(--cayenne)}
+
+  footer{
+    margin-top:3rem; padding-top:1.1rem; border-top:1px solid var(--rule);
+    font-family:var(--sans); font-size:.72rem; color:var(--steel);
+  }
+  .en{color:var(--steel); font-size:.95rem}
+
+  @media (max-width:30rem){
+    .sheet{padding:2.4rem 1.15rem 3rem}
+    h1{font-size:2rem}
+    ul.ed li{flex-wrap:wrap; gap:.4rem .9rem}
+    .lang{flex-basis:100%}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <p class="rub">La Direction du vent</p>
+  <h1>écrit de loin</h1>
+  <p class="sub">Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle.</p>
+
+  <hr class="keyline">
+
+  <p class="lede">La Direction du vent paraît le vendredi. Un numéro par semaine, un événement par
+  numéro, et le mécanisme qu'il met à découvert. Cinquante-trois numéros composent le premier
+  volume.</p>
+
+  <p class="en">Published on Fridays. One event a week, and the mechanism it lays bare. Fifty-three
+  issues make up the first volume.</p>
+
+  <h2>Éditions</h2>
+  <ul class="ed">
+    <li>
+      <span class="lang">FR</span>
+      <span class="ed-t"><a href="https://www.amazon.fr/dp/B0HHJQWG64">La Direction du vent</a></span>
+      <span class="fmt">numérique · broché</span>
+    </li>
+    <li>
+      <span class="lang">EN</span>
+      <span class="ed-t"><a href="https://www.amazon.com/dp/B0HHFZFDJ3">La Direction du Vent</a></span>
+      <span class="fmt">numérique · broché</span>
+    </li>
+    <li>
+      <span class="lang">DE</span>
+      <span class="ed-t"><a href="https://www.amazon.de/dp/B0HHJSJW9L">La Direction du vent</a></span>
+      <span class="fmt">numérique</span>
+    </li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>Pour écrire à l'auteur — presse, traductions, droits :<br>
+  <a class="mail" href="mailto:cberard.semba2003@gmail.com">cberard.semba2003@gmail.com</a></p>
+
+  <footer>
+    écrit de loin · La Direction du vent
+  </footer>
+
+</div>
+</body>
+</html>
