@@ -65,6 +65,7 @@
   .ct:not([hidden]) + .ct:not([hidden]){border-top:1px dotted var(--rule); padding-top:1.1rem; margin-top:1.1rem}
 
   /* — liste des éditions — */
+  .nt{font-style:italic; color:var(--steel); font-size:.92rem; margin:-.35rem 0 1rem}
   ul.ed{list-style:none; margin:0; padding:0}
   ul.ed li{
     display:flex; gap:.9rem; align-items:baseline;
@@ -158,6 +159,14 @@
 
   <h2 class="hd" data-hd="editions">Éditions</h2>
 
+  <p class="nt" data-lang="fr" lang="fr">Sept éditions, sept signatures, un seul auteur : le nom change avec la langue.</p>
+  <p class="nt" data-lang="en" lang="en">Seven editions, seven signatures, one author: the name changes with the language.</p>
+  <p class="nt" data-lang="de" lang="de">Sieben Ausgaben, sieben Signaturen, ein Autor: der Name wechselt mit der Sprache.</p>
+  <p class="nt" data-lang="es" lang="es">Siete ediciones, siete firmas, un solo autor: el nombre cambia con la lengua.</p>
+  <p class="nt" data-lang="it" lang="it">Sette edizioni, sette firme, un solo autore: il nome cambia con la lingua.</p>
+  <p class="nt" data-lang="pt" lang="pt">Sete edições, sete assinaturas, um só autor: o nome muda com a língua.</p>
+  <p class="nt" data-lang="ja" lang="ja">七つの版、七つの署名、著者はひとり。名は言語とともに変わる。</p>
+
   <ul class="ed">
     <li>
       <span class="lang">FR</span>
@@ -249,7 +258,7 @@
   }
 
   function show(lang){
-    var blocks = document.querySelectorAll(".say, .ct");
+    var blocks = document.querySelectorAll(".say, .ct, .nt");
     for (var i = 0; i < blocks.length; i++){
       blocks[i].hidden = (blocks[i].getAttribute("data-lang") !== lang);
     }
