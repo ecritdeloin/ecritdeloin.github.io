@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>écrit de loin</title>
+<title>écrit de loin — La Direction du vent</title>
+<meta name="description" content="La Direction du vent. Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle. Cinquante-trois numéros, en sept langues.">
 <style>
   :root{
     --paper:#fbfaf8; --ink:#1a1a1a; --steel:#535a5e;
@@ -43,10 +44,31 @@
     margin:2.4rem 0 .9rem;
   }
 
+  /* — sélecteur de langue — */
+  .picker{
+    display:flex; flex-wrap:wrap; gap:.1rem .55rem;
+    font-family:var(--sans); font-size:.68rem; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase;
+    margin:0 0 1.9rem;
+  }
+  .picker button{
+    font:inherit; letter-spacing:inherit; text-transform:inherit;
+    background:none; border:0; padding:.2rem 0; cursor:pointer;
+    color:var(--steel); border-bottom:2px solid transparent;
+  }
+  .picker button:hover{color:var(--cayenne)}
+  .picker button[aria-current="true"]{color:var(--cayenne); border-bottom-color:var(--cayenne)}
+  .picker .sep{color:var(--rule)}
+
+  /* sans JS, les sept blocs restent visibles et lisibles */
+  .say:not([hidden]) + .say:not([hidden]),
+  .ct:not([hidden]) + .ct:not([hidden]){border-top:1px dotted var(--rule); padding-top:1.1rem; margin-top:1.1rem}
+
+  /* — liste des éditions — */
   ul.ed{list-style:none; margin:0; padding:0}
   ul.ed li{
     display:flex; gap:.9rem; align-items:baseline;
-    padding:.55rem 0; border-bottom:1px solid var(--rule);
+    padding:.62rem 0; border-bottom:1px solid var(--rule);
   }
   ul.ed li:last-child{border-bottom:0}
   .lang{
@@ -54,9 +76,11 @@
     text-transform:uppercase; color:var(--steel); flex:0 0 2.6rem;
   }
   .ed-t{flex:1 1 auto}
-  .ed-t a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
-  .ed-t a:hover{border-bottom-color:var(--cayenne); color:var(--cayenne)}
-  .fmt{font-family:var(--sans); font-size:.72rem; color:var(--steel); white-space:nowrap}
+  .ed-t .who{display:block; font-style:italic; color:var(--steel); font-size:.88rem}
+  .fmt{font-family:var(--sans); font-size:.72rem; white-space:nowrap; color:var(--steel)}
+  .fmt a{color:var(--steel); text-decoration:none; border-bottom:1px solid var(--rule)}
+  .fmt a:hover{color:var(--cayenne); border-bottom-color:var(--cayenne)}
+  .fmt .dot{padding:0 .18rem; color:var(--rule)}
 
   .mail{
     font-family:var(--sans); font-size:1rem; letter-spacing:.01em;
@@ -68,13 +92,14 @@
     margin-top:3rem; padding-top:1.1rem; border-top:1px solid var(--rule);
     font-family:var(--sans); font-size:.72rem; color:var(--steel);
   }
-  .en{color:var(--steel); font-size:.95rem}
+  footer .rights{display:block; margin-top:.3rem}
 
   @media (max-width:30rem){
     .sheet{padding:2.4rem 1.15rem 3rem}
     h1{font-size:2rem}
-    ul.ed li{flex-wrap:wrap; gap:.4rem .9rem}
+    ul.ed li{flex-wrap:wrap; gap:.35rem .9rem}
     .lang{flex-basis:100%}
+    .fmt{flex-basis:100%}
   }
 </style>
 </head>
@@ -83,44 +108,171 @@
 
   <p class="rub">La Direction du vent</p>
   <h1>écrit de loin</h1>
-  <p class="sub">Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle.</p>
+
+  <nav class="picker" id="picker" aria-label="Langue">
+    <button type="button" data-go="fr" lang="fr">Français</button><span class="sep">·</span>
+    <button type="button" data-go="en" lang="en">English</button><span class="sep">·</span>
+    <button type="button" data-go="de" lang="de">Deutsch</button><span class="sep">·</span>
+    <button type="button" data-go="es" lang="es">Español</button><span class="sep">·</span>
+    <button type="button" data-go="it" lang="it">Italiano</button><span class="sep">·</span>
+    <button type="button" data-go="pt" lang="pt">Português</button><span class="sep">·</span>
+    <button type="button" data-go="ja" lang="ja">日本語</button>
+  </nav>
 
   <hr class="keyline">
 
-  <p class="lede">La Direction du vent paraît le vendredi. Un numéro par semaine, un événement par
-  numéro, et le mécanisme qu'il met à découvert. Cinquante-trois numéros composent le premier
-  volume.</p>
+  <div class="say" data-lang="fr" lang="fr">
+    <p class="sub">Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle.</p>
+    <p class="lede">La Direction du vent paraît le vendredi. Un numéro par semaine, un événement par numéro, et le mécanisme qu'il met à découvert. Cinquante-trois numéros composent le premier volume.</p>
+  </div>
 
-  <p class="en">Published on Fridays. One event a week, and the mechanism it lays bare. Fifty-three
-  issues make up the first volume.</p>
+  <div class="say" data-lang="en" lang="en">
+    <p class="sub">Every week, one event. Fifteen minutes to understand the mechanism it lays bare.</p>
+    <p class="lede">La Direction du vent is published on Fridays. One issue a week, one event an issue, and the mechanism it lays bare. Fifty-three issues make up the first volume.</p>
+  </div>
 
-  <h2>Éditions</h2>
+  <div class="say" data-lang="de" lang="de">
+    <p class="sub">Jede Woche ein Ereignis. Fünfzehn Minuten, um den Mechanismus zu verstehen, den es freilegt.</p>
+    <p class="lede">La Direction du vent erscheint freitags. Eine Ausgabe pro Woche, ein Ereignis pro Ausgabe, und der Mechanismus, den es freilegt. Dreiundfünfzig Ausgaben bilden den ersten Band.</p>
+  </div>
+
+  <div class="say" data-lang="es" lang="es">
+    <p class="sub">Cada semana, un acontecimiento. Quince minutos para entender el mecanismo que pone al descubierto.</p>
+    <p class="lede">La Direction du vent aparece los viernes. Un número por semana, un acontecimiento por número, y el mecanismo que pone al descubierto. Cincuenta y tres números componen el primer volumen.</p>
+  </div>
+
+  <div class="say" data-lang="it" lang="it">
+    <p class="sub">Ogni settimana, un avvenimento. Quindici minuti per capire il meccanismo che mette a nudo.</p>
+    <p class="lede">La Direction du vent esce il venerdì. Un numero a settimana, un avvenimento per numero, e il meccanismo che mette a nudo. Cinquantatré numeri compongono il primo volume.</p>
+  </div>
+
+  <div class="say" data-lang="pt" lang="pt">
+    <p class="sub">Todas as semanas, um acontecimento. Quinze minutos para perceber o mecanismo que põe a nu.</p>
+    <p class="lede">La Direction du vent sai às sextas-feiras. Um número por semana, um acontecimento por número, e o mecanismo que põe a nu. Cinquenta e três números compõem o primeiro volume.</p>
+  </div>
+
+  <div class="say" data-lang="ja" lang="ja">
+    <p class="sub">毎週、ひとつの出来事。十五分で、それが露わにする仕組みをつかむ。</p>
+    <p class="lede">『La Direction du vent』は毎週金曜日に出る。一週間にひとつの号、ひとつの号にひとつの出来事、そしてそれが露わにする仕組み。第一巻は五十三の号からなる。</p>
+  </div>
+
+  <h2 class="hd" data-hd="editions">Éditions</h2>
+
   <ul class="ed">
     <li>
       <span class="lang">FR</span>
-      <span class="ed-t"><a href="https://www.amazon.fr/dp/B0HHJQWG64">La Direction du vent</a></span>
-      <span class="fmt">numérique · broché</span>
+      <span class="ed-t" lang="fr">Français<span class="who">écrit de loin</span></span>
+      <span class="fmt" lang="fr"><a href="https://www.amazon.fr/dp/B0HHJQWG64">numérique</a><span class="dot">·</span><a href="https://www.amazon.fr/dp/B0HHJSZKZ5">broché</a></span>
     </li>
     <li>
       <span class="lang">EN</span>
-      <span class="ed-t"><a href="https://www.amazon.com/dp/B0HHFZFDJ3">La Direction du Vent</a></span>
-      <span class="fmt">numérique · broché</span>
+      <span class="ed-t" lang="en">English<span class="who">écrit de loin</span></span>
+      <span class="fmt" lang="en"><a href="https://www.amazon.com/dp/B0HHFZFDJ3">ebook</a><span class="dot">·</span><a href="https://www.amazon.com/dp/B0HHJ3MZLS">paperback</a></span>
     </li>
     <li>
       <span class="lang">DE</span>
-      <span class="ed-t"><a href="https://www.amazon.de/dp/B0HHJSJW9L">La Direction du vent</a></span>
-      <span class="fmt">numérique</span>
+      <span class="ed-t" lang="de">Deutsch<span class="who">aus der Ferne geschrieben</span></span>
+      <span class="fmt" lang="de"><a href="https://www.amazon.de/dp/B0HHJSJW9L">E-Book</a><span class="dot">·</span><a href="https://www.amazon.de/dp/B0HHJXKGLG">Taschenbuch</a></span>
+    </li>
+    <li>
+      <span class="lang">ES</span>
+      <span class="ed-t" lang="es">Español<span class="who">escrito desde lejos</span></span>
+      <span class="fmt" lang="es"><a href="https://www.amazon.es/dp/B0HHJVWYWV">digital</a><span class="dot">·</span><a href="https://www.amazon.es/dp/B0HHK5GX8Z">rústica</a></span>
+    </li>
+    <li>
+      <span class="lang">IT</span>
+      <span class="ed-t" lang="it">Italiano<span class="who">scritto da lontano</span></span>
+      <span class="fmt" lang="it"><a href="https://www.amazon.it/dp/B0HHL5JHBM">digitale</a><span class="dot">·</span><a href="https://www.amazon.it/dp/B0HHKNQSZ2">brossura</a></span>
+    </li>
+    <li>
+      <span class="lang">PT</span>
+      <span class="ed-t" lang="pt">Português<span class="who">escrito de longe</span></span>
+      <span class="fmt" lang="pt"><a href="https://www.amazon.com.br/dp/B0HHK7PK4W">digital</a><span class="dot">·</span><a href="https://www.amazon.com.br/dp/B0HHLD9Z6T">brochura</a></span>
+    </li>
+    <li>
+      <span class="lang">JA</span>
+      <span class="ed-t" lang="ja">日本語<span class="who">遠くから記す</span></span>
+      <span class="fmt" lang="ja"><a href="https://www.amazon.co.jp/dp/B0HHNVQ7XV">電子書籍</a><span class="dot">·</span><a href="https://www.amazon.co.jp/dp/B0HHSJ1YGT">ペーパーバック</a></span>
     </li>
   </ul>
 
-  <h2>Contact</h2>
-  <p>Pour écrire à l'auteur — presse, traductions, droits :<br>
-  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p>
+  <h2 class="hd" data-hd="contact">Contact</h2>
+
+  <div class="ct" data-lang="fr" lang="fr"><p>Pour écrire à l'auteur — presse, traductions, droits :<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+  <div class="ct" data-lang="en" lang="en"><p>To write to the author — press, translations, rights:<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+  <div class="ct" data-lang="de" lang="de"><p>Um dem Autor zu schreiben — Presse, Übersetzungen, Rechte:<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+  <div class="ct" data-lang="es" lang="es"><p>Para escribir al autor — prensa, traducciones, derechos:<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+  <div class="ct" data-lang="it" lang="it"><p>Per scrivere all'autore — stampa, traduzioni, diritti:<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+  <div class="ct" data-lang="pt" lang="pt"><p>Para escrever ao autor — imprensa, traduções, direitos:<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+  <div class="ct" data-lang="ja" lang="ja"><p>著者への連絡 — 報道、翻訳、権利：<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
 
   <footer>
     écrit de loin · La Direction du vent
+    <span class="rights">© 2026 écrit de loin<span class="hd-r" data-hd="rights"> · Tous droits réservés</span></span>
   </footer>
 
 </div>
+
+<script>
+(function(){
+  var LANGS = ["fr","en","de","es","it","pt","ja"];
+  var HD = {
+    editions: {fr:"Éditions", en:"Editions", de:"Ausgaben", es:"Ediciones",
+               it:"Edizioni", pt:"Edições", ja:"各言語版"},
+    contact:  {fr:"Contact", en:"Contact", de:"Kontakt", es:"Contacto",
+               it:"Contatti", pt:"Contacto", ja:"連絡先"},
+    rights:   {fr:" · Tous droits réservés", en:" · All rights reserved",
+               de:" · Alle Rechte vorbehalten", es:" · Todos los derechos reservados",
+               it:" · Tutti i diritti riservati", pt:" · Todos os direitos reservados",
+               ja:" · 無断転載を禁じる"}
+  };
+
+  function pick(){
+    var q = new URLSearchParams(location.search).get("lang");
+    if (q && LANGS.indexOf(q) > -1) return q;
+    var stored = null;
+    try { stored = localStorage.getItem("edl-lang"); } catch(e){}
+    if (stored && LANGS.indexOf(stored) > -1) return stored;
+    var nav = (navigator.languages || [navigator.language || "fr"]);
+    for (var i = 0; i < nav.length; i++){
+      var code = String(nav[i]).slice(0,2).toLowerCase();
+      if (LANGS.indexOf(code) > -1) return code;
+    }
+    return "fr";
+  }
+
+  function show(lang){
+    var blocks = document.querySelectorAll(".say, .ct");
+    for (var i = 0; i < blocks.length; i++){
+      blocks[i].hidden = (blocks[i].getAttribute("data-lang") !== lang);
+    }
+    var heads = document.querySelectorAll("[data-hd]");
+    for (var j = 0; j < heads.length; j++){
+      var key = heads[j].getAttribute("data-hd");
+      if (HD[key] && HD[key][lang]) heads[j].textContent = HD[key][lang];
+    }
+    var btns = document.querySelectorAll("#picker button");
+    for (var k = 0; k < btns.length; k++){
+      btns[k].setAttribute("aria-current", btns[k].getAttribute("data-go") === lang ? "true" : "false");
+    }
+    document.documentElement.lang = lang;
+    try { localStorage.setItem("edl-lang", lang); } catch(e){}
+  }
+
+  document.getElementById("picker").addEventListener("click", function(ev){
+    var b = ev.target.closest("button[data-go]");
+    if (b) show(b.getAttribute("data-go"));
+  });
+
+  show(pick());
+})();
+</script>
 </body>
 </html>
