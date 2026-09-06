@@ -1,0 +1,185 @@
+{
+ "site": "https://ecritdeloin.github.io",
+ "ordre": [
+  "fr",
+  "en",
+  "de",
+  "es",
+  "it",
+  "pt",
+  "ja"
+ ],
+ "mail": "ecritdeloin@proton.me",
+ "langues": {
+  "fr": {
+   "nom": "Français",
+   "locale": "fr_FR",
+   "titre": "Chaque semaine, un événement — La Direction du vent",
+   "desc": "Quinze minutes pour comprendre le mécanisme qu'il révèle. Un numéro par semaine, le vendredi. Cinquante-trois numéros composent le premier volume, en sept langues.",
+   "sub": "Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle.",
+   "lede": "La Direction du vent paraît le vendredi. Un numéro par semaine, un événement par numéro, et le mécanisme qu'il met à découvert. Cinquante-trois numéros composent le premier volume.",
+   "note": "Sept éditions, sept signatures, un seul auteur : le nom change avec la langue.",
+   "contact": "Pour écrire à l'auteur — presse, traductions, droits :",
+   "hd_editions": "Éditions",
+   "hd_contact": "Contact",
+   "droits": " · Tous droits réservés",
+   "aria_langue": "Langue"
+  },
+  "en": {
+   "nom": "English",
+   "locale": "en_GB",
+   "titre": "Every week, one event — La Direction du vent",
+   "desc": "Fifteen minutes to understand the mechanism it lays bare. One issue a week, on Fridays. Fifty-three issues make up the first volume, in seven languages.",
+   "sub": "Every week, one event. Fifteen minutes to understand the mechanism it lays bare.",
+   "lede": "La Direction du vent is published on Fridays. One issue a week, one event an issue, and the mechanism it lays bare. Fifty-three issues make up the first volume.",
+   "note": "Seven editions, seven signatures, one author: the name changes with the language.",
+   "contact": "To write to the author — press, translations, rights:",
+   "hd_editions": "Editions",
+   "hd_contact": "Contact",
+   "droits": " · All rights reserved",
+   "aria_langue": "Language"
+  },
+  "de": {
+   "nom": "Deutsch",
+   "locale": "de_DE",
+   "titre": "Jede Woche ein Ereignis — La Direction du vent",
+   "desc": "Fünfzehn Minuten, um den Mechanismus zu verstehen, den es freilegt. Eine Ausgabe pro Woche, freitags. Dreiundfünfzig Ausgaben bilden den ersten Band, in sieben Sprachen.",
+   "sub": "Jede Woche ein Ereignis. Fünfzehn Minuten, um den Mechanismus zu verstehen, den es freilegt.",
+   "lede": "La Direction du vent erscheint freitags. Eine Ausgabe pro Woche, ein Ereignis pro Ausgabe, und der Mechanismus, den es freilegt. Dreiundfünfzig Ausgaben bilden den ersten Band.",
+   "note": "Sieben Sprachausgaben, sieben Signaturen, ein Autor: der Name wechselt mit der Sprache.",
+   "contact": "Um dem Autor zu schreiben — Presse, Übersetzungen, Rechte:",
+   "hd_editions": "Sprachausgaben",
+   "hd_contact": "Kontakt",
+   "droits": " · Alle Rechte vorbehalten",
+   "aria_langue": "Sprache"
+  },
+  "es": {
+   "nom": "Español",
+   "locale": "es_ES",
+   "titre": "Cada semana, un acontecimiento — La Direction du vent",
+   "desc": "Quince minutos para entender el mecanismo que pone al descubierto. Un número por semana, los viernes. Cincuenta y tres números componen el primer volumen, en siete lenguas.",
+   "sub": "Cada semana, un acontecimiento. Quince minutos para entender el mecanismo que pone al descubierto.",
+   "lede": "La Direction du vent aparece los viernes. Un número por semana, un acontecimiento por número, y el mecanismo que pone al descubierto. Cincuenta y tres números componen el primer volumen.",
+   "note": "Siete ediciones, siete firmas, un solo autor: el nombre cambia con la lengua.",
+   "contact": "Para escribir al autor — prensa, traducciones, derechos:",
+   "hd_editions": "Ediciones",
+   "hd_contact": "Contacto",
+   "droits": " · Todos los derechos reservados",
+   "aria_langue": "Idioma"
+  },
+  "it": {
+   "nom": "Italiano",
+   "locale": "it_IT",
+   "titre": "Ogni settimana, un avvenimento — La Direction du vent",
+   "desc": "Quindici minuti per capire il meccanismo che mette a nudo. Un numero a settimana, il venerdì. Cinquantatré numeri compongono il primo volume, in sette lingue.",
+   "sub": "Ogni settimana, un avvenimento. Quindici minuti per capire il meccanismo che mette a nudo.",
+   "lede": "La Direction du vent esce il venerdì. Un numero a settimana, un avvenimento per numero, e il meccanismo che mette a nudo. Cinquantatré numeri compongono il primo volume.",
+   "note": "Sette edizioni, sette firme, un solo autore: il nome cambia con la lingua.",
+   "contact": "Per scrivere all'autore — stampa, traduzioni, diritti:",
+   "hd_editions": "Edizioni",
+   "hd_contact": "Contatti",
+   "droits": " · Tutti i diritti riservati",
+   "aria_langue": "Lingua"
+  },
+  "pt": {
+   "nom": "Português",
+   "locale": "pt_PT",
+   "titre": "Todas as semanas, um acontecimento — La Direction du vent",
+   "desc": "Quinze minutos para perceber o mecanismo que põe a nu. Um número por semana, às sextas-feiras. Cinquenta e três números compõem o primeiro volume, em sete línguas.",
+   "sub": "Todas as semanas, um acontecimento. Quinze minutos para perceber o mecanismo que põe a nu.",
+   "lede": "La Direction du vent sai às sextas-feiras. Um número por semana, um acontecimento por número, e o mecanismo que põe a nu. Cinquenta e três números compõem o primeiro volume.",
+   "note": "Sete edições, sete assinaturas, um só autor: o nome muda com a língua.",
+   "contact": "Para escrever ao autor — imprensa, traduções, direitos:",
+   "hd_editions": "Edições",
+   "hd_contact": "Contacto",
+   "droits": " · Todos os direitos reservados",
+   "aria_langue": "Língua"
+  },
+  "ja": {
+   "nom": "日本語",
+   "locale": "ja_JP",
+   "titre": "毎週、ひとつの出来事 — La Direction du vent",
+   "desc": "十五分で、それが露わにする仕組みをつかむ。毎週金曜日にひとつの号。第一巻は五十三の号からなり、七つの言語で存在する。",
+   "sub": "毎週、ひとつの出来事。十五分で、それが露わにする仕組みをつかむ。",
+   "lede": "『La Direction du vent』は毎週金曜日に出る。一週間にひとつの号、ひとつの号にひとつの出来事、そしてそれが露わにする仕組み。第一巻は五十三の号からなる。",
+   "note": "七つの版、七つの署名、著者はひとり。名は言語とともに変わる。",
+   "contact": "著者への連絡 — 報道、翻訳、権利：",
+   "hd_editions": "各言語版",
+   "hd_contact": "連絡先",
+   "droits": " · 無断転載を禁じる",
+   "aria_langue": "言語"
+  }
+ },
+ "editions": [
+  {
+   "code": "FR",
+   "lang": "fr",
+   "nom": "Français",
+   "plume": "écrit de loin",
+   "f1": "numérique",
+   "u1": "https://www.amazon.fr/dp/B0HHJQWG64",
+   "f2": "broché",
+   "u2": "https://www.amazon.fr/dp/B0HHJSZKZ5"
+  },
+  {
+   "code": "EN",
+   "lang": "en",
+   "nom": "English",
+   "plume": "écrit de loin",
+   "f1": "ebook",
+   "u1": "https://www.amazon.com/dp/B0HHFZFDJ3",
+   "f2": "paperback",
+   "u2": "https://www.amazon.com/dp/B0HHJ3MZLS"
+  },
+  {
+   "code": "DE",
+   "lang": "de",
+   "nom": "Deutsch",
+   "plume": "aus der Ferne geschrieben",
+   "f1": "E-Book",
+   "u1": "https://www.amazon.de/dp/B0HHJSJW9L",
+   "f2": "Taschenbuch",
+   "u2": "https://www.amazon.de/dp/B0HHJXKGLG"
+  },
+  {
+   "code": "ES",
+   "lang": "es",
+   "nom": "Español",
+   "plume": "escrito desde lejos",
+   "f1": "digital",
+   "u1": "https://www.amazon.es/dp/B0HHJVWYWV",
+   "f2": "rústica",
+   "u2": "https://www.amazon.es/dp/B0HHK5GX8Z"
+  },
+  {
+   "code": "IT",
+   "lang": "it",
+   "nom": "Italiano",
+   "plume": "scritto da lontano",
+   "f1": "digitale",
+   "u1": "https://www.amazon.it/dp/B0HHL5JHBM",
+   "f2": "brossura",
+   "u2": "https://www.amazon.it/dp/B0HHKNQSZ2"
+  },
+  {
+   "code": "PT",
+   "lang": "pt",
+   "nom": "Português",
+   "plume": "escrito de longe",
+   "f1": "digital",
+   "u1": "https://www.amazon.com.br/dp/B0HHK7PK4W",
+   "f2": "brochura",
+   "u2": "https://www.amazon.com.br/dp/B0HHLD9Z6T"
+  },
+  {
+   "code": "JA",
+   "lang": "ja",
+   "nom": "日本語",
+   "plume": "遠くから記す",
+   "f1": "電子書籍",
+   "u1": "https://www.amazon.co.jp/dp/B0HHNVQ7XV",
+   "f2": "ペーパーバック",
+   "u2": "https://www.amazon.co.jp/dp/B0HHSJ1YGT"
+  }
+ ]
+}

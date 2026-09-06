@@ -1,10 +1,37 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>écrit de loin — La Direction du vent</title>
-<meta name="description" content="La Direction du vent. Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle. Cinquante-trois numéros, en sept langues.">
+<title>Every week, one event — La Direction du vent</title>
+<meta name="description" content="Fifteen minutes to understand the mechanism it lays bare. One issue a week, on Fridays. Fifty-three issues make up the first volume, in seven languages.">
+<link rel="canonical" href="https://ecritdeloin.github.io/">
+<link rel="alternate" hreflang="x-default" href="https://ecritdeloin.github.io/">
+<link rel="alternate" hreflang="fr" href="https://ecritdeloin.github.io/fr/">
+<link rel="alternate" hreflang="en" href="https://ecritdeloin.github.io/en/">
+<link rel="alternate" hreflang="de" href="https://ecritdeloin.github.io/de/">
+<link rel="alternate" hreflang="es" href="https://ecritdeloin.github.io/es/">
+<link rel="alternate" hreflang="it" href="https://ecritdeloin.github.io/it/">
+<link rel="alternate" hreflang="pt" href="https://ecritdeloin.github.io/pt/">
+<link rel="alternate" hreflang="ja" href="https://ecritdeloin.github.io/ja/">
+<link rel="icon" type="image/png" href="https://ecritdeloin.github.io/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Direction du vent">
+<meta property="og:title" content="Every week, one event — La Direction du vent">
+<meta property="og:description" content="Fifteen minutes to understand the mechanism it lays bare. One issue a week, on Fridays. Fifty-three issues make up the first volume, in seven languages.">
+<meta property="og:url" content="https://ecritdeloin.github.io/">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:image" content="https://ecritdeloin.github.io/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Every week, one event — La Direction du vent">
+<meta name="twitter:description" content="Fifteen minutes to understand the mechanism it lays bare. One issue a week, on Fridays. Fifty-three issues make up the first volume, in seven languages.">
+<meta name="twitter:image" content="https://ecritdeloin.github.io/logo.png">
 <style>
   :root{
     --paper:#fbfaf8; --ink:#1a1a1a; --steel:#535a5e;
@@ -60,6 +87,18 @@
   .picker button[aria-current="true"]{color:var(--cayenne); border-bottom-color:var(--cayenne)}
   .picker .sep{color:var(--rule)}
 
+  /* pages statiques : le sélecteur est fait de liens, pas de boutons */
+  .picker a{
+    font:inherit; letter-spacing:inherit; text-transform:inherit;
+    color:var(--steel); text-decoration:none;
+    padding:.2rem 0; border-bottom:2px solid transparent;
+  }
+  .picker a:hover{color:var(--cayenne)}
+  .picker .ici{
+    color:var(--cayenne); border-bottom:2px solid var(--cayenne);
+    padding:.2rem 0;
+  }
+
   /* sans JS, les sept blocs restent visibles et lisibles */
   .say:not([hidden]) + .say:not([hidden]),
   .ct:not([hidden]) + .ct:not([hidden]){border-top:1px dotted var(--rule); padding-top:1.1rem; margin-top:1.1rem}
@@ -110,14 +149,8 @@
   <p class="rub">La Direction du vent</p>
   <h1>écrit de loin</h1>
 
-  <nav class="picker" id="picker" aria-label="Langue">
-    <button type="button" data-go="fr" lang="fr">Français</button><span class="sep">·</span>
-    <button type="button" data-go="en" lang="en">English</button><span class="sep">·</span>
-    <button type="button" data-go="de" lang="de">Deutsch</button><span class="sep">·</span>
-    <button type="button" data-go="es" lang="es">Español</button><span class="sep">·</span>
-    <button type="button" data-go="it" lang="it">Italiano</button><span class="sep">·</span>
-    <button type="button" data-go="pt" lang="pt">Português</button><span class="sep">·</span>
-    <button type="button" data-go="ja" lang="ja">日本語</button>
+  <nav class="picker" id="picker" aria-label="Language">
+    <button type="button" data-go="fr" lang="fr">Français</button><span class="sep">·</span><button type="button" data-go="en" lang="en">English</button><span class="sep">·</span><button type="button" data-go="de" lang="de">Deutsch</button><span class="sep">·</span><button type="button" data-go="es" lang="es">Español</button><span class="sep">·</span><button type="button" data-go="it" lang="it">Italiano</button><span class="sep">·</span><button type="button" data-go="pt" lang="pt">Português</button><span class="sep">·</span><button type="button" data-go="ja" lang="ja">日本語</button>
   </nav>
 
   <hr class="keyline">
@@ -157,11 +190,11 @@
     <p class="lede">『La Direction du vent』は毎週金曜日に出る。一週間にひとつの号、ひとつの号にひとつの出来事、そしてそれが露わにする仕組み。第一巻は五十三の号からなる。</p>
   </div>
 
-  <h2 class="hd" data-hd="editions">Éditions</h2>
+  <h2 class="hd" data-hd="editions">Editions</h2>
 
   <p class="nt" data-lang="fr" lang="fr">Sept éditions, sept signatures, un seul auteur : le nom change avec la langue.</p>
   <p class="nt" data-lang="en" lang="en">Seven editions, seven signatures, one author: the name changes with the language.</p>
-  <p class="nt" data-lang="de" lang="de">Sieben Ausgaben, sieben Signaturen, ein Autor: der Name wechselt mit der Sprache.</p>
+  <p class="nt" data-lang="de" lang="de">Sieben Sprachausgaben, sieben Signaturen, ein Autor: der Name wechselt mit der Sprache.</p>
   <p class="nt" data-lang="es" lang="es">Siete ediciones, siete firmas, un solo autor: el nombre cambia con la lengua.</p>
   <p class="nt" data-lang="it" lang="it">Sette edizioni, sette firme, un solo autore: il nome cambia con la lingua.</p>
   <p class="nt" data-lang="pt" lang="pt">Sete edições, sete assinaturas, um só autor: o nome muda com a língua.</p>
@@ -224,24 +257,20 @@
 
   <footer>
     écrit de loin · La Direction du vent
-    <span class="rights">© 2026 écrit de loin<span class="hd-r" data-hd="rights"> · Tous droits réservés</span></span>
+    <span class="rights">© 2026 écrit de loin<span class="hd-r" data-hd="rights"> · All rights reserved</span></span>
   </footer>
 
 </div>
-
 <script>
 (function(){
-  var LANGS = ["fr","en","de","es","it","pt","ja"];
+  var LANGS = ["fr", "en", "de", "es", "it", "pt", "ja"];
   var HD = {
-    editions: {fr:"Éditions", en:"Editions", de:"Ausgaben", es:"Ediciones",
-               it:"Edizioni", pt:"Edições", ja:"各言語版"},
-    contact:  {fr:"Contact", en:"Contact", de:"Kontakt", es:"Contacto",
-               it:"Contatti", pt:"Contacto", ja:"連絡先"},
-    rights:   {fr:" · Tous droits réservés", en:" · All rights reserved",
-               de:" · Alle Rechte vorbehalten", es:" · Todos los derechos reservados",
-               it:" · Tutti i diritti riservati", pt:" · Todos os direitos reservados",
-               ja:" · 無断転載を禁じる"}
+    editions: {"fr": "Éditions", "en": "Editions", "de": "Sprachausgaben", "es": "Ediciones", "it": "Edizioni", "pt": "Edições", "ja": "各言語版"},
+    contact:  {"fr": "Contact", "en": "Contact", "de": "Kontakt", "es": "Contacto", "it": "Contatti", "pt": "Contacto", "ja": "連絡先"},
+    rights:   {"fr": " · Tous droits réservés", "en": " · All rights reserved", "de": " · Alle Rechte vorbehalten", "es": " · Todos los derechos reservados", "it": " · Tutti i diritti riservati", "pt": " · Todos os direitos reservados", "ja": " · 無断転載を禁じる"}
   };
+  var TITRE = {"fr": "Chaque semaine, un événement — La Direction du vent", "en": "Every week, one event — La Direction du vent", "de": "Jede Woche ein Ereignis — La Direction du vent", "es": "Cada semana, un acontecimiento — La Direction du vent", "it": "Ogni settimana, un avvenimento — La Direction du vent", "pt": "Todas as semanas, um acontecimento — La Direction du vent", "ja": "毎週、ひとつの出来事 — La Direction du vent"};
+  var DESC  = {"fr": "Quinze minutes pour comprendre le mécanisme qu'il révèle. Un numéro par semaine, le vendredi. Cinquante-trois numéros composent le premier volume, en sept langues.", "en": "Fifteen minutes to understand the mechanism it lays bare. One issue a week, on Fridays. Fifty-three issues make up the first volume, in seven languages.", "de": "Fünfzehn Minuten, um den Mechanismus zu verstehen, den es freilegt. Eine Ausgabe pro Woche, freitags. Dreiundfünfzig Ausgaben bilden den ersten Band, in sieben Sprachen.", "es": "Quince minutos para entender el mecanismo que pone al descubierto. Un número por semana, los viernes. Cincuenta y tres números componen el primer volumen, en siete lenguas.", "it": "Quindici minuti per capire il meccanismo che mette a nudo. Un numero a settimana, il venerdì. Cinquantatré numeri compongono il primo volume, in sette lingue.", "pt": "Quinze minutos para perceber o mecanismo que põe a nu. Um número por semana, às sextas-feiras. Cinquenta e três números compõem o primeiro volume, em sete línguas.", "ja": "十五分で、それが露わにする仕組みをつかむ。毎週金曜日にひとつの号。第一巻は五十三の号からなり、七つの言語で存在する。"};
 
   function pick(){
     var q = new URLSearchParams(location.search).get("lang");
@@ -254,7 +283,7 @@
       var code = String(nav[i]).slice(0,2).toLowerCase();
       if (LANGS.indexOf(code) > -1) return code;
     }
-    return "fr";
+    return "en";
   }
 
   function show(lang){
@@ -272,6 +301,11 @@
       btns[k].setAttribute("aria-current", btns[k].getAttribute("data-go") === lang ? "true" : "false");
     }
     document.documentElement.lang = lang;
+    if (TITRE[lang]) document.title = TITRE[lang];
+    var md = document.querySelector('meta[name="description"]');
+    if (md && DESC[lang]) md.setAttribute("content", DESC[lang]);
+    var pl = document.getElementById("plein");
+    if (pl) pl.setAttribute("href", "https://ecritdeloin.github.io/" + lang + "/");
     try { localStorage.setItem("edl-lang", lang); } catch(e){}
   }
 
