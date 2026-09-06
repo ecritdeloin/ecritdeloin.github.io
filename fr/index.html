@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chaque semaine, un événement — La Direction du vent</title>
+<meta name="description" content="Quinze minutes pour comprendre le mécanisme qu&#x27;il révèle. Un numéro par semaine, le vendredi. Cinquante-trois numéros composent le premier volume, en sept langues.">
+<link rel="canonical" href="https://ecritdeloin.github.io/fr/">
+<link rel="alternate" hreflang="x-default" href="https://ecritdeloin.github.io/">
+<link rel="alternate" hreflang="fr" href="https://ecritdeloin.github.io/fr/">
+<link rel="alternate" hreflang="en" href="https://ecritdeloin.github.io/en/">
+<link rel="alternate" hreflang="de" href="https://ecritdeloin.github.io/de/">
+<link rel="alternate" hreflang="es" href="https://ecritdeloin.github.io/es/">
+<link rel="alternate" hreflang="it" href="https://ecritdeloin.github.io/it/">
+<link rel="alternate" hreflang="pt" href="https://ecritdeloin.github.io/pt/">
+<link rel="alternate" hreflang="ja" href="https://ecritdeloin.github.io/ja/">
+<link rel="icon" type="image/png" href="https://ecritdeloin.github.io/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Direction du vent">
+<meta property="og:title" content="Chaque semaine, un événement — La Direction du vent">
+<meta property="og:description" content="Quinze minutes pour comprendre le mécanisme qu&#x27;il révèle. Un numéro par semaine, le vendredi. Cinquante-trois numéros composent le premier volume, en sept langues.">
+<meta property="og:url" content="https://ecritdeloin.github.io/fr/">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_PT">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:image" content="https://ecritdeloin.github.io/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chaque semaine, un événement — La Direction du vent">
+<meta name="twitter:description" content="Quinze minutes pour comprendre le mécanisme qu&#x27;il révèle. Un numéro par semaine, le vendredi. Cinquante-trois numéros composent le premier volume, en sept langues.">
+<meta name="twitter:image" content="https://ecritdeloin.github.io/logo.png">
+<style>
+  :root{
+    --paper:#fbfaf8; --ink:#1a1a1a; --steel:#535a5e;
+    --cayenne:#941914; --rule:#dcd7d1;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--serif); font-size:17px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{max-width:34rem; margin:0 auto; padding:3.5rem 1.5rem 4rem}
+
+  .rub{
+    font-family:var(--sans); font-size:.66rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--cayenne);
+    margin:0 0 .5rem;
+  }
+  h1{
+    font-family:var(--serif); font-weight:400; font-size:2.4rem; line-height:1.1;
+    margin:0 0 .35rem; letter-spacing:-.01em;
+  }
+  .sub{
+    font-style:italic; color:var(--steel); margin:0 0 1.6rem; font-size:1.02rem;
+  }
+  hr{border:0; border-top:1px solid var(--rule); margin:1.8rem 0}
+  .keyline{border:0; border-top:2px solid var(--cayenne); width:2.6rem; margin:1.4rem 0}
+
+  p{margin:0 0 1rem}
+  .lede{font-size:1.08rem}
+
+  h2{
+    font-family:var(--sans); font-size:.66rem; font-weight:600;
+    letter-spacing:.22em; text-transform:uppercase; color:var(--steel);
+    margin:2.4rem 0 .9rem;
+  }
+
+  /* — sélecteur de langue — */
+  .picker{
+    display:flex; flex-wrap:wrap; gap:.1rem .55rem;
+    font-family:var(--sans); font-size:.68rem; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase;
+    margin:0 0 1.9rem;
+  }
+  .picker button{
+    font:inherit; letter-spacing:inherit; text-transform:inherit;
+    background:none; border:0; padding:.2rem 0; cursor:pointer;
+    color:var(--steel); border-bottom:2px solid transparent;
+  }
+  .picker button:hover{color:var(--cayenne)}
+  .picker button[aria-current="true"]{color:var(--cayenne); border-bottom-color:var(--cayenne)}
+  .picker .sep{color:var(--rule)}
+
+  /* pages statiques : le sélecteur est fait de liens, pas de boutons */
+  .picker a{
+    font:inherit; letter-spacing:inherit; text-transform:inherit;
+    color:var(--steel); text-decoration:none;
+    padding:.2rem 0; border-bottom:2px solid transparent;
+  }
+  .picker a:hover{color:var(--cayenne)}
+  .picker .ici{
+    color:var(--cayenne); border-bottom:2px solid var(--cayenne);
+    padding:.2rem 0;
+  }
+
+  /* sans JS, les sept blocs restent visibles et lisibles */
+  .say:not([hidden]) + .say:not([hidden]),
+  .ct:not([hidden]) + .ct:not([hidden]){border-top:1px dotted var(--rule); padding-top:1.1rem; margin-top:1.1rem}
+
+  /* — liste des éditions — */
+  .nt{font-style:italic; color:var(--steel); font-size:.92rem; margin:-.35rem 0 1rem}
+  ul.ed{list-style:none; margin:0; padding:0}
+  ul.ed li{
+    display:flex; gap:.9rem; align-items:baseline;
+    padding:.62rem 0; border-bottom:1px solid var(--rule);
+  }
+  ul.ed li:last-child{border-bottom:0}
+  .lang{
+    font-family:var(--sans); font-size:.68rem; font-weight:600; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--steel); flex:0 0 2.6rem;
+  }
+  .ed-t{flex:1 1 auto}
+  .ed-t .who{display:block; font-style:italic; color:var(--steel); font-size:.88rem}
+  .fmt{font-family:var(--sans); font-size:.72rem; white-space:nowrap; color:var(--steel)}
+  .fmt a{color:var(--steel); text-decoration:none; border-bottom:1px solid var(--rule)}
+  .fmt a:hover{color:var(--cayenne); border-bottom-color:var(--cayenne)}
+  .fmt .dot{padding:0 .18rem; color:var(--rule)}
+
+  .mail{
+    font-family:var(--sans); font-size:1rem; letter-spacing:.01em;
+    color:var(--ink); text-decoration:none; border-bottom:2px solid var(--cayenne);
+  }
+  .mail:hover{color:var(--cayenne)}
+
+  footer{
+    margin-top:3rem; padding-top:1.1rem; border-top:1px solid var(--rule);
+    font-family:var(--sans); font-size:.72rem; color:var(--steel);
+  }
+  footer .rights{display:block; margin-top:.3rem}
+
+  @media (max-width:30rem){
+    .sheet{padding:2.4rem 1.15rem 3rem}
+    h1{font-size:2rem}
+    ul.ed li{flex-wrap:wrap; gap:.35rem .9rem}
+    .lang{flex-basis:100%}
+    .fmt{flex-basis:100%}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <p class="rub">La Direction du vent</p>
+  <h1>écrit de loin</h1>
+
+  <nav class="picker" aria-label="Langue">
+    <span class="ici" lang="fr" aria-current="page">Français</span><span class="sep">·</span><a href="https://ecritdeloin.github.io/en/" lang="en" hreflang="en">English</a><span class="sep">·</span><a href="https://ecritdeloin.github.io/de/" lang="de" hreflang="de">Deutsch</a><span class="sep">·</span><a href="https://ecritdeloin.github.io/es/" lang="es" hreflang="es">Español</a><span class="sep">·</span><a href="https://ecritdeloin.github.io/it/" lang="it" hreflang="it">Italiano</a><span class="sep">·</span><a href="https://ecritdeloin.github.io/pt/" lang="pt" hreflang="pt">Português</a><span class="sep">·</span><a href="https://ecritdeloin.github.io/ja/" lang="ja" hreflang="ja">日本語</a>
+  </nav>
+
+  <hr class="keyline">
+
+  <div lang="fr">
+    <p class="sub">Chaque semaine, un événement. Quinze minutes pour comprendre le mécanisme qu'il révèle.</p>
+    <p class="lede">La Direction du vent paraît le vendredi. Un numéro par semaine, un événement par numéro, et le mécanisme qu'il met à découvert. Cinquante-trois numéros composent le premier volume.</p>
+  </div>
+
+  <h2 class="hd">Éditions</h2>
+
+  <p class="nt" lang="fr">Sept éditions, sept signatures, un seul auteur : le nom change avec la langue.</p>
+
+  <ul class="ed">
+    <li>
+      <span class="lang">FR</span>
+      <span class="ed-t" lang="fr">Français<span class="who">écrit de loin</span></span>
+      <span class="fmt" lang="fr"><a href="https://www.amazon.fr/dp/B0HHJQWG64">numérique</a><span class="dot">·</span><a href="https://www.amazon.fr/dp/B0HHJSZKZ5">broché</a></span>
+    </li>
+    <li>
+      <span class="lang">EN</span>
+      <span class="ed-t" lang="en">English<span class="who">écrit de loin</span></span>
+      <span class="fmt" lang="en"><a href="https://www.amazon.com/dp/B0HHFZFDJ3">ebook</a><span class="dot">·</span><a href="https://www.amazon.com/dp/B0HHJ3MZLS">paperback</a></span>
+    </li>
+    <li>
+      <span class="lang">DE</span>
+      <span class="ed-t" lang="de">Deutsch<span class="who">aus der Ferne geschrieben</span></span>
+      <span class="fmt" lang="de"><a href="https://www.amazon.de/dp/B0HHJSJW9L">E-Book</a><span class="dot">·</span><a href="https://www.amazon.de/dp/B0HHJXKGLG">Taschenbuch</a></span>
+    </li>
+    <li>
+      <span class="lang">ES</span>
+      <span class="ed-t" lang="es">Español<span class="who">escrito desde lejos</span></span>
+      <span class="fmt" lang="es"><a href="https://www.amazon.es/dp/B0HHJVWYWV">digital</a><span class="dot">·</span><a href="https://www.amazon.es/dp/B0HHK5GX8Z">rústica</a></span>
+    </li>
+    <li>
+      <span class="lang">IT</span>
+      <span class="ed-t" lang="it">Italiano<span class="who">scritto da lontano</span></span>
+      <span class="fmt" lang="it"><a href="https://www.amazon.it/dp/B0HHL5JHBM">digitale</a><span class="dot">·</span><a href="https://www.amazon.it/dp/B0HHKNQSZ2">brossura</a></span>
+    </li>
+    <li>
+      <span class="lang">PT</span>
+      <span class="ed-t" lang="pt">Português<span class="who">escrito de longe</span></span>
+      <span class="fmt" lang="pt"><a href="https://www.amazon.com.br/dp/B0HHK7PK4W">digital</a><span class="dot">·</span><a href="https://www.amazon.com.br/dp/B0HHLD9Z6T">brochura</a></span>
+    </li>
+    <li>
+      <span class="lang">JA</span>
+      <span class="ed-t" lang="ja">日本語<span class="who">遠くから記す</span></span>
+      <span class="fmt" lang="ja"><a href="https://www.amazon.co.jp/dp/B0HHNVQ7XV">電子書籍</a><span class="dot">·</span><a href="https://www.amazon.co.jp/dp/B0HHSJ1YGT">ペーパーバック</a></span>
+    </li>
+  </ul>
+
+  <h2 class="hd">Contact</h2>
+
+  <div lang="fr"><p>Pour écrire à l'auteur — presse, traductions, droits :<br>
+  <a class="mail" href="mailto:ecritdeloin@proton.me">ecritdeloin@proton.me</a></p></div>
+
+  <footer>
+    écrit de loin · La Direction du vent
+    <span class="rights">© 2026 écrit de loin · Tous droits réservés</span>
+  </footer>
+
+</div>
+</body>
+</html>
