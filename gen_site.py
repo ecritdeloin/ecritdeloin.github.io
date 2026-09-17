@@ -14,6 +14,7 @@ D = json.load(open(os.path.join(ICI, 'contenu.json'), encoding='utf-8'))
 CSS = open(os.path.join(ICI, 'style.css'), encoding='utf-8').read().rstrip()
 
 SITE, ORDRE, MAIL = D['site'], D['ordre'], D['mail']
+HEBDO, HEBDO_L = D['hebdo'], D['hebdo_libelle']
 L, EDITIONS = D['langues'], D['editions']
 T = lambda s: html.escape(s, quote=False)   # texte : l'apostrophe reste une apostrophe
 A = lambda s: html.escape(s, quote=True)    # valeur d'attribut : tout est échappé
@@ -116,6 +117,11 @@ def page_langue(code):
     <p class="lede">{lede}</p>
   </div>
 
+  <h2 class="hd">{hd_hb}</h2>
+
+  <div lang="{code}"><p>{hebdo}<br>
+  <a class="mail" href="{hebdo_url}">{hebdo_lib}</a></p></div>
+
   <h2 class="hd">{hd_ed}</h2>
 
   <p class="nt" lang="{code}">{note}</p>
@@ -137,6 +143,8 @@ def page_langue(code):
 </html>
 """.format(aria=A(x['aria_langue']), picker=picker_liens(code), code=code,
            sub=T(x['sub']), lede=T(x['lede']), hd_ed=T(x['hd_editions']),
+           hd_hb=T(x['hd_hebdo']), hebdo=T(x['hebdo']),
+           hebdo_url=A(HEBDO), hebdo_lib=T(HEBDO_L),
            note=T(x['note']), editions=liste_editions(), hd_ct=T(x['hd_contact']),
            contact=T(x['contact']), mail=MAIL, droits=T(x['droits'])))
 
@@ -150,6 +158,10 @@ def page_racine():
     blocs_nt = '\n'.join(
         '  <p class="nt" data-lang="{c}" lang="{c}">{t}</p>'.format(c=c, t=T(L[c]['note']))
         for c in ORDRE)
+    blocs_hb = '\n'.join(
+        '  <div class="hb" data-lang="{c}" lang="{c}"><p>{t}<br>\n'
+        '  <a class="mail" href="{u}">{l}</a></p></div>'.format(
+            c=c, t=T(L[c]['hebdo']), u=A(HEBDO), l=T(HEBDO_L)) for c in ORDRE)
     blocs_ct = '\n'.join(
         '  <div class="ct" data-lang="{c}" lang="{c}"><p>{t}<br>\n'
         '  <a class="mail" href="mailto:{m}">{m}</a></p></div>'.format(
@@ -159,6 +171,7 @@ def page_racine():
 (function(){{
   var LANGS = {langs};
   var HD = {{
+    hebdo:    {hb},
     editions: {ed},
     contact:  {ct},
     rights:   {dr}
@@ -181,7 +194,7 @@ def page_racine():
   }}
 
   function show(lang){{
-    var blocks = document.querySelectorAll(".say, .ct, .nt");
+    var blocks = document.querySelectorAll(".say, .ct, .nt, .hb");
     for (var i = 0; i < blocks.length; i++){{
       blocks[i].hidden = (blocks[i].getAttribute("data-lang") !== lang);
     }}
@@ -210,7 +223,7 @@ def page_racine():
 
   show(pick());
 }})();
-</script>""".format(langs=json.dumps(ORDRE), ed=hd('hd_editions'), ct=hd('hd_contact'),
+</script>""".format(langs=json.dumps(ORDRE), hb=hd('hd_hebdo'), ed=hd('hd_editions'), ct=hd('hd_contact'),
                     dr=hd('droits'), ti=hd('titre'), de=hd('desc'), site=SITE)
 
     return (tete(None, SITE + '/') + """
@@ -227,6 +240,10 @@ def page_racine():
   <hr class="keyline">
 
 {say}
+  <h2 class="hd" data-hd="hebdo">The weekly</h2>
+
+{hb}
+
   <h2 class="hd" data-hd="editions">Editions</h2>
 
 {nt}
@@ -246,7 +263,7 @@ def page_racine():
 {script}
 </body>
 </html>
-""".format(picker=picker_boutons(), say=blocs_say, nt=blocs_nt,
+""".format(picker=picker_boutons(), say=blocs_say, hb=blocs_hb, nt=blocs_nt,
            editions=liste_editions(), ct=blocs_ct, script=script))
 
 

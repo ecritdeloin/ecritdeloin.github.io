@@ -190,6 +190,23 @@
     <p class="lede">『La Direction du vent』は毎週金曜日に出る。一週間にひとつの号、ひとつの号にひとつの出来事、そしてそれが露わにする仕組み。第一巻は五十三の号からなる。</p>
   </div>
 
+  <h2 class="hd" data-hd="hebdo">The weekly</h2>
+
+  <div class="hb" data-lang="fr" lang="fr"><p>Le numéro paraît chaque vendredi, entier et gratuit, dans les sept langues.<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+  <div class="hb" data-lang="en" lang="en"><p>The issue appears every Friday, whole and free, in all seven languages.<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+  <div class="hb" data-lang="de" lang="de"><p>Die Ausgabe erscheint jeden Freitag, ganz und kostenlos, in allen sieben Sprachen.<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+  <div class="hb" data-lang="es" lang="es"><p>El número aparece cada viernes, entero y gratuito, en las siete lenguas.<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+  <div class="hb" data-lang="it" lang="it"><p>Il numero esce ogni venerdì, intero e gratuito, in tutte e sette le lingue.<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+  <div class="hb" data-lang="pt" lang="pt"><p>O número sai todas as sextas-feiras, inteiro e gratuito, nas sete línguas.<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+  <div class="hb" data-lang="ja" lang="ja"><p>号は毎週金曜日に、全体が無料で、七つの言語すべてで出る。<br>
+  <a class="mail" href="https://ecritdeloin.substack.com">ecritdeloin.substack.com</a></p></div>
+
   <h2 class="hd" data-hd="editions">Editions</h2>
 
   <p class="nt" data-lang="fr" lang="fr">Sept éditions, sept signatures, un seul auteur : le nom change avec la langue.</p>
@@ -265,6 +282,7 @@
 (function(){
   var LANGS = ["fr", "en", "de", "es", "it", "pt", "ja"];
   var HD = {
+    hebdo:    {"fr": "L'hebdomadaire", "en": "The weekly", "de": "Die Wochenzeitung", "es": "El semanario", "it": "Il settimanale", "pt": "O semanário", "ja": "週刊"},
     editions: {"fr": "Éditions", "en": "Editions", "de": "Sprachausgaben", "es": "Ediciones", "it": "Edizioni", "pt": "Edições", "ja": "各言語版"},
     contact:  {"fr": "Contact", "en": "Contact", "de": "Kontakt", "es": "Contacto", "it": "Contatti", "pt": "Contacto", "ja": "連絡先"},
     rights:   {"fr": " · Tous droits réservés", "en": " · All rights reserved", "de": " · Alle Rechte vorbehalten", "es": " · Todos los derechos reservados", "it": " · Tutti i diritti riservati", "pt": " · Todos os direitos reservados", "ja": " · 無断転載を禁じる"}
@@ -287,7 +305,7 @@
   }
 
   function show(lang){
-    var blocks = document.querySelectorAll(".say, .ct, .nt");
+    var blocks = document.querySelectorAll(".say, .ct, .nt, .hb");
     for (var i = 0; i < blocks.length; i++){
       blocks[i].hidden = (blocks[i].getAttribute("data-lang") !== lang);
     }
